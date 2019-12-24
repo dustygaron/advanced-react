@@ -1,1 +1,1 @@
-# sickFits
+# sickfits
