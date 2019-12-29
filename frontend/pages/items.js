@@ -1,13 +1,4 @@
-import React from 'react'
+import Home from './index'
 
-class items extends React.Component {
-  render() {
-    return (
-      <div>
 
-      </div>
-    )
-  }
-}
-
-export default items
+export default Home 
