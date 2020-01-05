@@ -1,7 +1,9 @@
 const { forwardTo } = require('prisma-binding')
 
 const Query = {
-  items: forwardTo('db')
+  items: forwardTo('db'),
+  item: forwardTo('db')
+
   // async DataTransferItemList(parent, args, ctx, info) {
   //   console.log('Getting items!')
   //   const items = await ctx.db.query.items()
@@ -11,3 +13,4 @@ const Query = {
 }
 
 module.exports = Query
+

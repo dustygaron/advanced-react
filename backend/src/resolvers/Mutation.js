@@ -2,7 +2,6 @@ const Mutations = {
 
   async createItem(parent, args, ctx, info) {
     // Todo: check if they are logged in
-
     const item = await ctx.db.mutation.createItem({
       data: {
         ...args
@@ -11,13 +10,24 @@ const Mutations = {
 
     console.log(item)
     return item
+  },
+
+  updateItem(parent, args, ctx, info) {
+    // Take a copy of the updates
+    const updates = { ...args }
+    // Remove the ID from the updates
+    delete updates.id
+    // Run the update method
+    return ctx.db.mutation.updateItem(
+      {
+        data: updates,
+        where: {
+          id: args.id
+        },
+      },
+      info
+    )
   }
-  // createDog(parent, args, ctx, info) {
-  //   global.dogs = global.dogs || []
-  //   const newDog = { name: args.name }
-  //   global.dogs.push(newDog)
-  //   console.log(args)
-  // }
 }
 
 module.exports = Mutations
