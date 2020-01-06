@@ -28,7 +28,7 @@ class Item extends React.Component {
           >
             <a>{item.title}</a>
           </Link>
-          {item.title}
+
         </Title>
         <PriceTag>{formatMoney(item.price)}</PriceTag>
         <p>{item.description}</p>
