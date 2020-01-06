@@ -29830,11 +29830,17 @@ var Sell = function Sell(_ref) {
       lineNumber: 5
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UpdateItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    id: query.id,
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6
+    },
+    __self: this
+  }, "Edit Item"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_UpdateItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    id: query.id,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
     },
     __self: this
   }));
@@ -29863,7 +29869,7 @@ var Sell = function Sell(_ref) {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/update.js ***!
   \*******************************/
@@ -29888,5 +29894,5 @@ module.exports = dll_ff16f8ce03537687a35c;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=update.js.map
