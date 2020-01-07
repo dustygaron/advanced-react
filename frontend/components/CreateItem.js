@@ -5,6 +5,7 @@ import Router from 'next/router'
 import Form from './styles/Form'
 import formatMoney from '../lib/formatMoney'
 import Error from './ErrorMessage'
+import { ALL_ITEMS_QUERY } from './Items'
 
 const CREATE_ITEM_MUTATION = gql`
   mutation CREATE_ITEM_MUTATION(
@@ -28,11 +29,6 @@ const CREATE_ITEM_MUTATION = gql`
 
 class CreateItem extends Component {
   state = {
-    title: 'Cool Shoes',
-    description: 'I love those shoes',
-    image: 'dog.jpg',
-    largeImage: 'large-dog.jpg',
-    price: 1000,
   }
   handleChange = e => {
     const { name, type, value } = e.target
@@ -61,7 +57,9 @@ class CreateItem extends Component {
 
   render() {
     return (
-      <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
+      <Mutation
+        mutation={CREATE_ITEM_MUTATION}
+        variables={this.state}>
         {(createItem, { loading, error }) => (
           <Form
             onSubmit={async e => {
