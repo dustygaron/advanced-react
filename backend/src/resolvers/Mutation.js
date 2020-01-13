@@ -242,6 +242,51 @@ const Mutations = {
     )
   },
 
+  // ADD TO CART ------------------------------------------------
+  async addToCart(parent, args, ctx, info) {
+    // Make sure they are logged in
+    const { userId } = ctx.request
+    if (!userId) {
+      throw new Error('You must be logged in!')
+    }
+
+    // Query user's cart
+    const [existingCartItem] = await ctx.db.query.cartItems({
+      where: {
+        user: { id: userId },
+        item: { id: args.id },
+      },
+    })
+
+    // Check if that item is already in their cart and increment by 1 if it is
+    if (existingCartItem) {
+      console.log('This item is already in their cart')
+      return ctx.db.mutation.updateCartItem(
+        {
+          where: { id: existingCartItem.id },
+          data: { quantity: existingCartItem.quantity + 1 },
+        },
+        info
+      )
+    }
+
+    // If its not, create a fresh CartItem for that user
+    return ctx.db.mutation.createCartItem(
+      {
+        data: {
+          user: {
+            connect: { id: userId },
+          },
+          item: {
+            connect: { id: args.id },
+          },
+        },
+      },
+      info
+    )
+  },
+
+
 }
 
 module.exports = Mutations
