@@ -25,9 +25,10 @@ type Query {
   users: [User]!
 }
 
-type User {
+type User{
   id: ID!
   name: String!
   email: String!
   permissions: [Permission!]!
+  cart: [CartItem!]!
 }
