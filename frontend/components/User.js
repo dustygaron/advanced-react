@@ -3,12 +3,23 @@ import gql from 'graphql-tag'
 import propTypes from 'prop-types'
 
 const CURRENT_USER_QUERY = gql`
-  query signin{
+  query {
     me {
       id
       email
       name
       permissions
+      cart {
+        id
+        quantity
+        item {
+          id
+          price
+          image
+          title
+          description
+        }
+      }
     }
   }
 `
