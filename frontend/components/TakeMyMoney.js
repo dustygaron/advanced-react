@@ -30,6 +30,7 @@ function totalItems(cart) {
 class TakeMyMoney extends React.Component {
 
   onToken = async (res, createOrder) => {
+    NProgress.start()
     console.log('on token called')
     console.log(res)
     // Manually call mutation once we have stripe token
@@ -40,7 +41,10 @@ class TakeMyMoney extends React.Component {
     }).catch(err => {
       alert(err.message)
     })
-    console.log(order)
+    Router.push({
+      pathname: '/order',
+      query: { id: order.data.createOrder.id },
+    })
   }
   render() {
     return (
@@ -51,7 +55,6 @@ class TakeMyMoney extends React.Component {
             refetchQueries={[{ query: CURRENT_USER_QUERY }]}
           >
             {(createOrder) => (
-
               <StripeCheckout
                 amount={calcTotalPrice(me.cart)}
                 name='Sick Fits' description={`Order of ${totalItems(me.cart)} items!`}
