@@ -57,7 +57,24 @@ const Query = {
 
     // Return the order
     return order
-  }
+  },
+
+  // ORDERS ------------------------------------------------
+  async orders(parent, args, ctx, info) {
+    const { userId } = ctx.request
+    if (!userId) {
+      throw new Error('you must be signed in!')
+    }
+    return ctx.db.query.orders(
+      {
+        where: {
+          user: { id: userId },
+        },
+      },
+      info
+    )
+  },
+
 
 }
 
