@@ -329,7 +329,7 @@ const Mutations = {
         cart {
           id
           quantity
-          item {title price id description image}
+          item {title price id description image largeImage}
         }
       }`
     )
@@ -348,9 +348,35 @@ const Mutations = {
     })
 
     // Convert the CartItems to OrderItems
+    const orderItems = user.cart.map(cartItem => {
+      const orderItem = {
+        ...cartItem.item,
+        quantity: cartItem.quantity,
+      }
+      delete orderItem.id
+      return orderItem
+    })
+
     // Create the order
+    const order = await ctx.db.mutation.createOrder({
+      data: {
+        total: charge.amount,
+        charge: charge.id,
+        items: { create: orderItems },
+        user: { connect: { id: userId } },
+      }
+    })
+
     // Clean up - clear the user's cart, delete cartItems
+    const cartItemIds = user.cart.map(cartItem => cartItem.id)
+    await ctx.db.mutation.deleteManyCartItems({
+      whereL: {
+        id_in: cartItemIds,
+      }
+    })
+
     // Return the order to the client
+    return order
 
   }
 
