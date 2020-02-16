@@ -1,5 +1,5 @@
-#endpoint: ${env:PRISMA_ENDPOINT}
-endpoint: https://store-server-6fd3c75b33.herokuapp.com/store-server/prod
+# endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: https://dev-life-prod-77cca6f2e1.herokuapp.com/dev-life-prod/prod
 datamodel: datamodel.graphql
 secret: ${env:PRISMA_SECRET}
 hooks:
