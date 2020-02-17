@@ -52,7 +52,7 @@ class RequestReset extends React.Component {
                   onChange={this.saveToState}
                 />
               </label>
-              <button type="submit">Request Reset!</button>
+              <button type="submit">Request Reset</button>
             </fieldset>
           </Form>
         )}

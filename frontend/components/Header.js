@@ -6,6 +6,7 @@ import NProgress from 'nprogress'
 import Cart from '../components/Cart'
 import Search from './Search'
 
+
 Router.onRouteChangeStart = () => {
   NProgress.start()
 }
@@ -17,11 +18,14 @@ Router.onRouteChangeError = () => {
 }
 
 const Logo = styled.h1`
-  font-size: 4rem;
+   font-size: 4rem;
   margin-left: 2rem;
   position: relative;
-  z-index: 2;
-  transform: skew()(-7deg);
+  z-index: 2; 
+  top: 0;
+  /* transform: skew()(-7deg); */
+  width: 220px;
+  
   a {
     padding: 0.5rem 1 rem;
     background: ${props => props.theme.red};
@@ -36,7 +40,8 @@ const Logo = styled.h1`
 `
 const StyledHeader = styled.header`
   .bar {
-    border-bottom: 10px solid ${props => props.theme.black};
+    /* border-bottom: 10px solid ${props => props.theme.black}; */
+    background-color: ${props => props.theme.devblue};
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
@@ -58,7 +63,7 @@ const Header = () => (
     <div className='bar'>
       <Logo>
         <Link href="/">
-          <a>DevLife</a>
+          <img src='/static/img/logo.svg' alt="Dev Life Logo" />
         </Link>
       </Logo>
       <Nav />
@@ -67,7 +72,7 @@ const Header = () => (
       <Search />
     </div>
     <Cart />
-  </StyledHeader>
+  </StyledHeader >
 )
 
 export default Header

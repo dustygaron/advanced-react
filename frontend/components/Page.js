@@ -4,12 +4,13 @@ import Header from '../components/Header'
 import Meta from '../components/Meta'
 
 const theme = {
-  red: '#FF0000',
+  red: '#00B8D4',
+  devblue: '#00B8D4',
   black: '#393939',
   grey: '#3A3A3A',
   lightgrey: '#E1E1E1',
   offWhite: '#EDEDED',
-  maxWidth: '1000px',
+  maxWidth: '1600px',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
 }
 
@@ -24,11 +25,13 @@ const Inner = styled.div`
 `
 injectGlobal`
 @font-face {
-  font-family: 'radnika_next';
-  src: url('../static/radnikanext-medium-webfont.woff2') format('woff2');
+  font-family: 'Space Mono';
+  src: url('../static/SpaceMono-Regular.woff') format('woff2');
   font-weight: normal;
   font-style: normal;
-}
+} 
+
+
   html {
     box-sizing: border-box;
     font-size: 10px;
@@ -41,7 +44,7 @@ injectGlobal`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
-    font-family: 'radnika_next';
+    font-family: 'Space Mono';
   }
   a {
     text-decoration: none;
