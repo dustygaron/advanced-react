@@ -30,6 +30,8 @@ const orderUl = styled.ul`
   display: grid;
   grid-gap: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  border: 10px dashed black;
+
 `;
 
 class OrderList extends React.Component {
@@ -53,24 +55,22 @@ class OrderList extends React.Component {
                         query: { id: order.id },
                       }}
                     >
+
                       <a>
                         <div className="order-meta">
                           <p>{order.items.reduce((a, b) => a + b.quantity, 0)} Items</p>
                           <p>{order.items.length} Products</p>
-
-                          {/* <p>{formatDistance(order.createdAt, new Date(order.createdAt))}</p> */}
-
                           <p>{formatDistance(new Date(order.createdAt), new Date(), { includeSeconds: true })}</p>
-
-
                           <p>{formatMoney(order.total)}</p>
                         </div>
+
                         <div className="images">
                           {order.items.map(item => (
                             <img key={item.id} src={item.image} alt={item.title} />
                           ))}
                         </div>
                       </a>
+
                     </Link>
                   </OrderItemStyles>
                 ))}

@@ -50,6 +50,10 @@ injectGlobal`
     text-decoration: none;
     color: ${theme.black};
   }
+  h1,
+  h2 {
+    text-align: center;
+  }
 `
 
 class Page extends React.Component {

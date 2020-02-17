@@ -42,7 +42,10 @@ class Items extends React.Component {
             skip: this.props.page * perPage - perPage,
           }}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>
+            if (loading) return <div>
+              <h1>Loading Products...</h1>
+              <img src='/static/img/spinner.gif' alt="Loading Graphic" />
+            </div>
             if (error) return <p>Error: {error.message}</p>
             return <ItemsList>
               {data.items.map(item => <Item item={item} key={item.id} />

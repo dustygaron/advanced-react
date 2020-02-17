@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-const OrderItemStyles = styled.li`
+const OrderItemStyles = styled.li` 
+  width: 30%;
   box-shadow: ${props => props.theme.bs};
   list-style: none;
   padding: 2rem;
+  display: inline-flex;
   border: 1px solid ${props => props.theme.offWhite};
+  margin: 20px;
+
   h2 {
     border-bottom: 2px solid red;
     margin-top: 0;
@@ -23,9 +27,10 @@ const OrderItemStyles = styled.li`
       width: 100%;
     }
   }
+
   .order-meta {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(20px, 1fr)); */
     display: grid;
     grid-gap: 1rem;
     text-align: center;

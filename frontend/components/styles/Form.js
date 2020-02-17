@@ -35,6 +35,7 @@ const Form = styled.form`
       border-color: #777;
     }
   }
+  placeholder
   button,
   input[type='submit'] {
     width: auto;
