@@ -55,7 +55,7 @@ export default class SingleItem extends React.Component {
             return (
               <SingleItemStyles>
                 <Head>
-                  <title>Sick Fits | {item.title}</title>
+                  <title>Dev Life | {item.title}</title>
                 </Head>
                 <img src={item.largeImage} alt={item.title} />
                 <div className='details'>

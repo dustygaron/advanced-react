@@ -43,7 +43,7 @@ class Items extends React.Component {
           }}>
           {({ data, error, loading }) => {
             if (loading) return <div>
-              <h1>Loading Products...</h1>
+              <p>Waking Up Heroku...</p>
               <img src='/static/img/spinner.gif' alt="Loading Graphic" />
             </div>
             if (error) return <p>Error: {error.message}</p>

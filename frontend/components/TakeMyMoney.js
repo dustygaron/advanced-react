@@ -57,7 +57,7 @@ class TakeMyMoney extends React.Component {
             {(createOrder) => (
               <StripeCheckout
                 amount={calcTotalPrice(me.cart)}
-                name='Sick Fits' description={`Order of ${totalItems(me.cart)} items!`}
+                name='Dev Life' description={`Order of ${totalItems(me.cart)} items!`}
                 image={me.cart.length && me.cart[0].item && me.cart[0].item.image}
                 stripeKey='pk_test_7bqstKE3A5sDX6UKEEmY5eYD00wZ9z4yRH'
                 currency='USD'
