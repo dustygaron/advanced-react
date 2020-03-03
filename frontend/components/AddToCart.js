@@ -17,7 +17,7 @@ class AddToCart extends React.Component {
   render() {
 
     const { id } = this.props
-    console.log('=====>>>>>>>>', id);
+    // console.log('=====>>>>>>>>', id);
 
     return (
 

@@ -41,7 +41,7 @@ const Logo = styled.h1`
 const StyledHeader = styled.header`
   .bar {
     /* border-bottom: 10px solid ${props => props.theme.black}; */
-    background-color: ${props => props.theme.devblue};
+    /* background-color: ${props => props.theme.devblue}; */
     display: grid;
     grid-template-columns: auto 1fr;
     justify-content: space-between;
